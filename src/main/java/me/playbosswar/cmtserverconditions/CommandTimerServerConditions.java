@@ -1,15 +1,19 @@
 package me.playbosswar.cmtserverconditions;
 
 import me.playbosswar.cmtserverconditions.conditions.ServerPlayerAmountCondition;
+import me.playbosswar.cmtserverconditions.conditions.ServerRandomValueCondition;
 import me.playbosswar.com.api.ConditionExtension;
 import me.playbosswar.com.api.ConditionRules;
+import me.playbosswar.com.api.events.EventExtension;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 public class CommandTimerServerConditions extends ConditionExtension {
     ConditionRules rules = new ConditionRules();
 
     public CommandTimerServerConditions() {
-        rules.register(new ServerPlayerAmountCondition());
+        rules.register(new ServerPlayerAmountCondition(), new ServerRandomValueCondition());
     }
 
     @Override
@@ -20,7 +24,7 @@ public class CommandTimerServerConditions extends ConditionExtension {
     @Override
     public @NotNull
     String[] getDescription() {
-        return new String[]{ "§7Use server data to fulfill conditions" };
+        return new String[]{"§7Use server data to fulfill conditions"};
     }
 
     @Override
@@ -30,10 +34,16 @@ public class CommandTimerServerConditions extends ConditionExtension {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.0";
+        return "1.1.0";
     }
 
+    @Override
     public @NotNull ConditionRules getRules() {
         return rules;
+    }
+
+    @Override
+    public ArrayList<EventExtension> getEvents() {
+        return new ArrayList<>();
     }
 }

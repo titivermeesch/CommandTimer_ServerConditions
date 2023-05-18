@@ -45,7 +45,9 @@ public class ServerPlayerAmountCondition implements ConditionRule {
     }
 
     @Override
-    public void execute(Facts facts) { }
+    public void execute(Facts facts) {
+        // Not implemented
+    }
 
     @Override
     public int compareTo(@NotNull Rule o) {
