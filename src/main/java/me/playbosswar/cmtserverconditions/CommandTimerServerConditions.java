@@ -2,6 +2,7 @@ package me.playbosswar.cmtserverconditions;
 
 import me.playbosswar.cmtserverconditions.conditions.ServerPlayerAmountCondition;
 import me.playbosswar.cmtserverconditions.conditions.ServerRandomValueCondition;
+import me.playbosswar.cmtserverconditions.events.TimeSkipEventExtension;
 import me.playbosswar.com.api.ConditionExtension;
 import me.playbosswar.com.api.ConditionRules;
 import me.playbosswar.com.api.events.EventExtension;
@@ -34,7 +35,7 @@ public class CommandTimerServerConditions extends ConditionExtension {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.1.0";
+        return "1.2.0";
     }
 
     @Override
@@ -44,6 +45,8 @@ public class CommandTimerServerConditions extends ConditionExtension {
 
     @Override
     public ArrayList<EventExtension> getEvents() {
-        return new ArrayList<>();
+        ArrayList<EventExtension> events = new ArrayList<>();
+        events.add(new TimeSkipEventExtension(this));
+        return events;
     }
 }
