@@ -22,9 +22,8 @@ public class CommandTimerServerConditions extends ConditionExtension {
     }
 
     @Override
-    public @NotNull
-    String[] getDescription() {
-        return new String[]{"§7Use server data to fulfill conditions"};
+    public @NotNull String[] getDescription() {
+        return new String[] { "§7Use server data to fulfill conditions" };
     }
 
     @Override
@@ -34,7 +33,7 @@ public class CommandTimerServerConditions extends ConditionExtension {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.1.0";
+        return "1.1.1";
     }
 
     @Override
